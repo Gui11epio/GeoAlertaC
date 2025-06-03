@@ -106,7 +106,7 @@ namespace GeoAlertaC.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("NVARCHAR2(450)");
 
                     b.Property<string>("Senha")
                         .IsRequired()
@@ -121,6 +121,9 @@ namespace GeoAlertaC.Migrations
                         .HasColumnType("NVARCHAR2(2000)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.ToTable("TB_USUARIO", (string)null);
                 });

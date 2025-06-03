@@ -29,8 +29,21 @@ namespace GeoAlertaC.Application.Services
             return usuario == null ? null : _mapper.Map<UsuarioResponse>(usuario);
         }
 
+        public UsuarioResponse? ObterPorEmail(string email)
+        {
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == email);
+            return usuario == null ? null : _mapper.Map<UsuarioResponse>(usuario);
+        }
+
         public UsuarioResponse Criar(UsuarioRequest request)
         {
+            var usuarioExistente = _context.Usuarios.FirstOrDefault(u => u.Email == request.Email);
+            if (usuarioExistente != null)
+            {
+                return null; // Email já cadastrado
+            }
+            
+
             var usuario = _mapper.Map<Usuario>(request);
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();

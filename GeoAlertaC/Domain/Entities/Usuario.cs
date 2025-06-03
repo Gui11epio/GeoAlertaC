@@ -1,5 +1,8 @@
-﻿namespace GeoAlertaC.Domain.Entities
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace GeoAlertaC.Domain.Entities
 {
+    [Index(nameof(Email), IsUnique = true)]
     public class Usuario
     {
         public int Id { get; set; }

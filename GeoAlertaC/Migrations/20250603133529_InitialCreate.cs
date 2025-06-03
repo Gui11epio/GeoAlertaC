@@ -18,7 +18,7 @@ namespace GeoAlertaC.Migrations
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
                     UserName = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    Email = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    Email = table.Column<string>(type: "NVARCHAR2(450)", nullable: false),
                     Senha = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     Telefone = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
                 },
@@ -92,6 +92,12 @@ namespace GeoAlertaC.Migrations
                 name: "IX_TB_ENDERECO_UsuarioId",
                 table: "TB_ENDERECO",
                 column: "UsuarioId",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_USUARIO_Email",
+                table: "TB_USUARIO",
+                column: "Email",
                 unique: true);
         }
 
