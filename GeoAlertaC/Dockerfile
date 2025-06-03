@@ -1,5 +1,7 @@
 # Etapa base
 FROM mcr.microsoft.com/dotnet/aspnet:8.0-alpine AS base
+#Cria Usario não root
+RUN adduser -D appuser
 WORKDIR /app
 EXPOSE 8080
 EXPOSE 8081
@@ -23,4 +25,7 @@ RUN dotnet publish "GeoAlertaC.csproj" -c $BUILD_CONFIGURATION -o /app/publish /
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
+
+#Usa o usuario não root
+USER appuser
 ENTRYPOINT ["dotnet", "GeoAlertaC.dll"]
