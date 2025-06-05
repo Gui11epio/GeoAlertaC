@@ -55,7 +55,7 @@ flowchart TD
 
 3. **Coloque suas informações do Banco de Dados Oracle**
 
-   ![image](https://github.com/user-attachments/assets/901e8090-a7ef-41b1-b1b1-54c9bdd546eb)
+   ![Capture](https://github.com/user-attachments/assets/68cc3662-1d57-4840-ad94-99f6f32845c8)
 
 
 4. **Na terminal do projeto coloque as mesmas informações da Oracle**
@@ -68,4 +68,55 @@ flowchart TD
      dotnet ef database update
      ```
 6. **De um Build no seu projeto e o Swagger abrirá sozinho**
+
+
+## ⚙️ Executar o Projeto pelo Render
+No caso do Render vai ser utilizado o nosso banco de dados
+
+Para o Postman:
+```bash
+https://geoalerta-java.onrender.com/
+```
+
+## 🗂️  Caminhos Disponíveis
+
+📍 USUÁRIO
+
+- Endpoint: GET/api/Usuario : **Pega todos os usuários**
+
+
+- Endpoint: POST/api/Usuario : **Cadastra um usuário**
+  
+
+- Endpoint: GET/api/Usuario/{id} : **Pega usuário por Id**
+  
+
+- Endpoint: PUT/api/Usuario/{id} : **Atualiza o usuário por Id**
+  
+
+- Endpoint: DELETE/api/Usuario/{id} : **Deleta o usuário por Id**
+
+
+- Endpoint: GET/api/Usuario/ObterPorEmail/{email} : **Pega todos os usuários**
+
+
+
+📍 ENDEREÇO
+
+- Endpoint: GET/api/Endereco : **Pega todos os endereços**
+
+- Endpoint: POST/api/Endereco : **Cadastra um endereço**
+
+- Endpoint: GET/api/Endereco/{id} : **Pega endereço por Id**
+
+- Endpoint: PUT/api/Endereco/{id} : **Atualiza o endereço por Id**
+
+- Endpoint: DELETE/api/Endereco/{id} : **Deleta o endereço por Id**
+
+
+
+📍 ALERTA
+
+- Endpoint: POST/api/Alerta : **Faz o alerta sobre os deslizamentos, usando o id do usuário e endereço**
+
 
