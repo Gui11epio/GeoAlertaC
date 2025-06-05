@@ -24,6 +24,7 @@ API desenvolvida em .NET com foco na coleta e análise de dados climáticos para
 - AutoMapper
 - Migrations
 - DataAnnotations
+- Dockerfile(para o Render)
 
 ## 🧭 Visão Geral do Funcionamento
 
