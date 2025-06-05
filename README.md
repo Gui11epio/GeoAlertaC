@@ -69,8 +69,3 @@ flowchart TD
      ```
 6. **De um Build no seu projeto e o Swagger abrirá sozinho**
 
-## Execução com Docker
-```bash
-docker build -t nome_imagem .
-docker run -d -p 8080:8080 --name nome_imagem nome_container
-```
